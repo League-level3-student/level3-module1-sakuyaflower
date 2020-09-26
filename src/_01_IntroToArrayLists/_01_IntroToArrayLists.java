@@ -26,15 +26,20 @@ numbers.add("potato");
 		}
 		//5. Print only the even numbered elements in the list.
 		for(int i = 0; i > numbers.size(); i ++) {
-			if(numbers.size() % 2 == 0) {
-			System.out.println(i);	
+			if(i % 2 == 0) {
+			System.out.println(numbers.get(i));	
 			}
 		}
 		System.out.println();
 		//6. Print all the Strings in reverse order.
-		for(int i = 5; i < numbers.size(); i--) {
-			System.out.println(i);
+		for(int i = numbers.size()-1; i > -1; i--) {
+			System.out.println(numbers.get(i));
 		}
 		//7. Print only the Strings that have the letter 'e' in them.
+		for(int i = 0; i < numbers.size(); i++) {
+			if(numbers.get(i).contains("e")) {
+				System.out.println(numbers.get(i));
+			}
+		}
 	}
 }
