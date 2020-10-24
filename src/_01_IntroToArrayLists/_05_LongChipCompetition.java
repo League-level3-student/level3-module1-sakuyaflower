@@ -15,8 +15,18 @@ public class _05_LongChipCompetition {
 	private ArrayList<Beatle> theBeatles = new ArrayList<Beatle>();
 
 	public static void main(String[] args) {
-		_05_LongChipCompetition lcc = new _05_LongChipCompetition();
+		_05_LongChipCompetition lcc = new _05_LongChipCompetition();	
+		lcc.initializeBeatles();
+		lcc.getLongestChip();
 		
+	}
+	
+void getLongestChip() {
+	for(int i = 0; i < theBeatles.size(); i++) {
+			if(){
+				
+			}
+		}
 	}
 	
 	private void initializeBeatles() {
