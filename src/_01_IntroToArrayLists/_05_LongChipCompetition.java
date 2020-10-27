@@ -23,9 +23,14 @@ public class _05_LongChipCompetition {
 	
 void getLongestChip() {
 	for(int i = 0; i < theBeatles.size(); i++) {
-			if(){
+		Beatle beatles = theBeatles.get(i);
+		ArrayList<Chip> findLongestChip = beatles.getChips();
+		for(int o = 0; i < findLongestChip.size(); i++) {
+			beatles.getChips();
+			if(beatles) {
 				
 			}
+		}
 		}
 	}
 	
