@@ -22,16 +22,21 @@ public class _05_LongChipCompetition {
 	}
 	
 void getLongestChip() {
+	double longest = 0;
+	String name = null;
 	for(int i = 0; i < theBeatles.size(); i++) {
-		Beatle beatles = theBeatles.get(i);
-		ArrayList<Chip> findLongestChip = beatles.getChips();
-		for(int o = 0; i < findLongestChip.size(); i++) {
-			beatles.getChips();
-			if(beatles) {
-				
+		Beatle beatle = theBeatles.get(i);
+		ArrayList<Chip> chips = beatle.getChips();
+		for(int o = 0; o < chips.size(); o++) {
+			
+			if(chips.get(o).getLength() > longest) {
+				name = beatle.getName();
+				longest = chips.get(o).getLength();
 			}
+			
 		}
 		}
+	System.out.println(name + " has the longest chip. ");
 	}
 	
 	private void initializeBeatles() {
