@@ -1,5 +1,7 @@
 package _01_IntroToArrayLists;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -10,19 +12,17 @@ import javax.swing.JPanel;
 
 //Copyright The League of Amazing Programmers, 2015
 
-public class _06_IPodShuffle{
+public class _06_IPodShuffle implements ActionListener{
+	ArrayList<Song> songs = new ArrayList<Song>();
+	JButton button = new JButton("Surprise Me!");
+	JPanel panel = new JPanel();
+	JFrame frame = new JFrame();
 	public _06_IPodShuffle() {
 		// 1. Use the Song class the play the demo.mp3 file.
-				ArrayList<Song> songs = new ArrayList<Song>();
-				JButton button = new JButton("Surprise Me!");
-				JPanel panel = new JPanel();
-				JFrame frame = new JFrame();
-				frame.setSize(200, 200);
-				frame.setVisible(true);
-				frame.add(panel);
-				panel.add(button); 
-				button.addActionListener(null);
-				
+				songs.add(new Song("Bad Habits"));
+				songs.add(new Song("Kissin' On My Tattoos"));
+				songs.add(new Song("My Boo"));
+			
 				
 		/**
 		 * 2. Congratulations on completing the sound check! * Now we want to make an
@@ -34,7 +34,25 @@ public class _06_IPodShuffle{
 		
 	}
 	
+	void buttonNFrame() {
+		frame.setSize(200, 200);
+		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.add(panel);
+		panel.add(button); 
+		button.addActionListener(this);
+		
+	}
 	public static void main(String[] args) {
-		new _06_IPodShuffle();
+		new _06_IPodShuffle().buttonNFrame();;
+	
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+	Random rand = new Random();
+	int differentSong = rand.nextInt(3);
+		songs.get(differentSong).play();
 	}
 }
