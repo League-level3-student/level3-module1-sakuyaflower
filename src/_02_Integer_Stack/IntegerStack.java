@@ -15,13 +15,15 @@ public class IntegerStack {
 	//3. Complete the steps in the push method.
 	public void push(int v) {
 		//A. create a new array that is one element larger than the member array
-		int[] plusOne = 
+		int[] plusOne = new int[integers.length + 1];
 		//B. set the last element of the new array equal to the integer passed into the method
-		
+		plusOne[plusOne.length - 1] = v;
 		//C. iterate through the member array and copy all the elements into the new array
-		
+		for(int i = 0; i < integers.length; i ++) {
+			plusOne[i] = integers[i];
+		}
 		//D. set the member array equal to the new array.
-		
+		integers = plusOne;
 	}
 	
 	//4. Complete the steps in the pop method.
