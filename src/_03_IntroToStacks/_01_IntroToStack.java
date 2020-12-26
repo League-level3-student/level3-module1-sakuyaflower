@@ -25,10 +25,10 @@ public class _01_IntroToStack {
 		int secondNum = Integer.parseInt(answerTwo);
 		for(int i = 0; i < numbers.size(); i++) {
 		double num = numbers.pop();
-		if(){
-			
-		}
-		}
+		
+	System.out.println(num);
+		
+		
 		
 		
 		//   EXAMPLE:
@@ -45,4 +45,5 @@ public class _01_IntroToStack {
 		//   66.47984807
 		//   74.12121224
 	}
-}
+
+	}}
