@@ -25,9 +25,10 @@ public class _01_IntroToStack {
 		int secondNum = Integer.parseInt(answerTwo);
 		for(int i = 0; i < numbers.size(); i++) {
 		double num = numbers.pop();
-		
-	System.out.println(num);
-		
+		if(num >= finalNum&&num<=secondNum) {
+			System.out.println(num);
+						
+		}
 		
 		
 		
