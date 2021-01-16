@@ -49,19 +49,44 @@ public static void main(String[] args) {
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
-		char key = e.getKeyChar();
-		letters.push(key);
-		String text = label.getText();
-		label.setText(text + key);
-		frame.pack();
+		char key = e.getKeyChar();		
 		
 		if(KeyEvent.VK_BACK_SPACE == key) {
-			letters.pop();
-			
+			char letter = letters.pop();
+			deleted.push(letter);	
 		}
+		
+		else if(KeyEvent.VK_RIGHT == key) {
+			// Is this the redo key?
+			// It takes the last char you deleted and puts it back into the letters
+			char letter = deleted.pop();
+			letters.push(letter);
+		}
+		
+		else {
+			letters.push(key);
+		}
+		
+		makeLabelFromStack();
+		frame.pack();
 	}
 
-
+    void makeLabelFromStack() {
+    	// In this method, write a loop that gets each Character in the letters stack and 
+    	// adds it to a String, then makes the String the label to display.
+    	
+    	String newLabelText = "";
+    	
+    	// Loop goes here
+    	for(int i = 0; i < letters.size(); i++) {
+    		
+    	}
+    	
+    	label.setText(newLabelText);
+    	
+    }
+	
+	
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
