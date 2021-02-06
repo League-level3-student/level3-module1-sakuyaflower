@@ -23,7 +23,20 @@ public class _03_TestMatchingBrackets {
 		Stack<String> bracket = new Stack<String>();
 		//1. Use a for loop to iterate through your brackets String 
 for(int i = 0; i < bracket.size(); i++) {
-	brackets.
+	bracket.get(i);
+	if(brackets.charAt(i)== '{') {
+		bracket.push();
+		}
+	else if(brackets.charAt(i)=='}') {
+		brackets.pop();
+		if(brackets.equals(brackets.isEmpty())) {
+			return false;
+		}
+		else if(brackets.charAt(i)) {
+			
+		}
+	}
+	
 }
     			//2.  If the current character is an '{'
 
