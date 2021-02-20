@@ -20,24 +20,26 @@ public class _03_TestMatchingBrackets {
 
 	// USE A STACK TO COMPLETE THE METHOD FOR CHECKING IF EVERY OPENING BRACKET HAS A MATCHING CLOSING BRACKET
 	private boolean doBracketsMatch(String brackets) {
-		Stack<String> bracket = new Stack<String>();
+		Stack<String> curly = new Stack<String>();
 		//1. Use a for loop to iterate through your brackets String 
-for(int i = 0; i < bracket.size(); i++) {
-	bracket.get(i);
+for(int i = 0; i < brackets.length(); i++) {
 	if(brackets.charAt(i)== '{') {
-		bracket.push();
+		curly.push("{");
 		}
 	else if(brackets.charAt(i)=='}') {
-		brackets.pop();
-		if(brackets.equals(brackets.isEmpty())) {
+		if(curly.isEmpty()) {
 			return false;
 		}
-		else if(brackets.charAt(i)) {
-			
+		else {
+			curly.pop();
 		}
 	}
-	
 }
+	if(curly.isEmpty()) {
+		 return true;
+	}
+	else {
+
     			//2.  If the current character is an '{'
 
         			//3.  Push an '{' onto the stack 
@@ -58,8 +60,8 @@ for(int i = 0; i < bracket.size(); i++) {
 		//10. else (i.e. everything matched correctly)
 
     			//11. return true 
-			return true;
-		
+			return false;
+	}
 	}
 
 }
