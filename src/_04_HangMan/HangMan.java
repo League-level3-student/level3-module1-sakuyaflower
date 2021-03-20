@@ -18,9 +18,10 @@ public class HangMan implements KeyListener {
 	JPanel panel = new JPanel();
 	JLabel label = new JLabel();
 	Stack<String> words = new Stack<String>();
+	Stack<String> wrongWords = new Stack<String>(); 
 	static HangMan game = new HangMan();
 	String characWord;
-
+	int tries = 7;
 	public static void main(String[] args) {
 		game.theHangManGame();
 		game.setup();
@@ -63,8 +64,13 @@ public void keyPressed(KeyEvent arg0) {
 	// TODO Auto-generated method stub
 	char pressed = arg0.getKeyChar();
 	String newLabel = "";
+	String deletedLetters = "";
 	if(!characWord.contains("" + pressed)) {
 		//lose a life in the game
+		String deleted = words.pop();
+		wrongWords.push(deleted);
+		tries -= 1;
+	
 		return;
 	}
 	else {
