@@ -23,16 +23,21 @@ private int[] values;
 			}
 		}
 		//B. create a String array that is one element longer than the keys
-		
+		String[] moreKeys = new String[keys.length + 1];
 		//C. create an integer array that is one element longer than values
-		
+		int[] moreValues = new int[values.length + 1];
 		//D. set the last element of the new String array to the passed in key
-		
+		key = moreKeys.length - 1;
 		//E. set the last element of the new int array to the passed in value
-		
+		values = moreValues.length - 1;
 		//F. iterate through the keys and values and copy the elements to the new arrays
-		
+		for(int i = 0; i < keys.length; i ++) {
+			
+		}
 		//G. Set the keys and values arrays equal to the new arrays created in steps B and C.
+	moreKeys = keys;
+	moreValues = values;
+	
 	}
 	
 	//5. Complete the method so it returns the value located at the passed in key.
