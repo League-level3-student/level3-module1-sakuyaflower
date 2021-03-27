@@ -2,7 +2,7 @@ package _05_String_Integer_Pair;
 
 public class StringIntegerPair {
 	//1. create a private array of Strings called keys. Don't initialize it.
-
+private Array<Strings> keys = new Array<Strings>();
 	//2. create a private array of integers called values.
 	
 	StringIntegerPair(){

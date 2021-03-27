@@ -17,6 +17,7 @@ public class HangMan implements KeyListener {
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
 	JLabel label = new JLabel();
+	JLabel lives = new JLabel();
 	Stack<String> words = new Stack<String>();
 	Stack<String> wrongWords = new Stack<String>(); 
 	static HangMan game = new HangMan();
@@ -31,6 +32,7 @@ public class HangMan implements KeyListener {
 	void setup() {
 		frame.add(panel);
 		panel.add(label);
+		panel.add(lives);
 		frame.setVisible(true);
 		frame.addKeyListener(this);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -54,8 +56,14 @@ if(!words.isEmpty()) {
 		labelText += "_ ";
 	}
 	label.setText(labelText);
-	frame.pack();
+	tries = 7;
+	lives.setText("\n lives: " + String.valueOf(tries));
 	System.out.println(characWord);
+	frame.pack();
+}
+ else {
+	 JOptionPane.showConfirmDialog(null, "Game Over");
+		System.exit(0);
 }
 }
 
@@ -66,13 +74,14 @@ public void keyPressed(KeyEvent arg0) {
 	String newLabel = "";
 	String deletedLetters = "";
 	if(!characWord.contains("" + pressed)) {
-		//lose a life in the game
-		String deleted = words.pop();
-		wrongWords.push(deleted);
 		tries -= 1;
+		lives.setText("\n lives: " + String.valueOf(tries));
+		if(tries == 0) {
+			JOptionPane.showMessageDialog(null, "Aw man you didnt get the word correctly it was " + characWord);
+			getNextWord();
+			}	
+		}
 	
-		return;
-	}
 	else {
 		for(int i = 0; i < characWord.length(); i++) {
 			if(characWord.charAt(i) == pressed) {
@@ -86,10 +95,14 @@ public void keyPressed(KeyEvent arg0) {
 		}	
 	label.setText(newLabel);
 	frame.pack();
+	if(!newLabel.contains("_")) {
+		JOptionPane.showMessageDialog(null, "You guess the word correctly :)");
+		getNextWord();
+	}
 	}
 //if words have been guess move on to the next
 	//lose a life
-	//add a stack for letters that are incorrect
+	
 }
 
 @Override
