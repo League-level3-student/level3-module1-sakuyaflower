@@ -17,8 +17,8 @@ private int[] values;
 		//   the passed in String, set the value at that location to the
 		//   passed in value and return from the method.
 		for(int i = 0; i < keys.length; i++) {
-			if(keys.equals(i)) {
-				keys = new String[i];
+			if(keys[i].equals(key)) {
+				values[i] = value;
 				return;
 			}
 		}
@@ -27,36 +27,40 @@ private int[] values;
 		//C. create an integer array that is one element longer than values
 		int[] moreValues = new int[values.length + 1];
 		//D. set the last element of the new String array to the passed in key
-		key = moreKeys[moreKeys.length - 1];
+		moreKeys[moreKeys.length - 1] = key;
 		//E. set the last element of the new int array to the passed in value
-	values = moreValues[moreValues.length - 1];
+	moreValues[moreValues.length - 1] = value;
 		//F. iterate through the keys and values and copy the elements to the new arrays
 	for(int i = 0; i < keys.length ; i ++) {
-		moreKeys.clone();
+		moreKeys[i] = keys[i];
 		}
 	for(int i = 0; i < values.length ; i ++) {
-		moreValues.clone();
+		moreValues[i] = values[i];
 		}
 		//G. Set the keys and values arrays equal to the new arrays created in steps B and C.
-	moreKeys = keys;
-	moreValues = values;
+	keys = moreKeys;
+	values = moreValues;
 	
 	}
 	
 	//5. Complete the method so it returns the value located at the passed in key.
 	//   If the key does not exist, return Integer.MIN_VALUE.id me
 	public int get(String key) {
-		if(keys.contains() ) {
-			return Integer.MIN_VALUE;
+		for(int i = 0; i < keys.length; i++) {
+			if(keys[i].equals(key)) {
+				return values[i];
+			}
 		}
-
+		return Integer.MIN_VALUE;
 	}
 	
 	//6. Complete the containsKey method so that it returns true if the
 	//   passed in keys is contained in the keys array
 	public boolean containsKey(String key) {
-		if(keys.() ) {
-			
+		for(int i = 0; i < keys.length; i++) {
+			if(keys[i].equals(key)) {
+				return true;
+			}
 		}
 		return false;
 	}
@@ -64,11 +68,11 @@ private int[] values;
 	//7. Complete the containsValue method so that it returns true if the
 	//   passed in value is contained in the values array
 	public boolean containsValue(int value) {
-		if(values.contains(moreValues)) {
-			
-		}
-		else {
-			
+		for(int i = 0; i < values.length; i++) {
+			if(values[i]==value) {
+				return true;
+			}
+		}	
 		return false;
 	}
 	}
