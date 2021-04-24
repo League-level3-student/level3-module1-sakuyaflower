@@ -75,7 +75,7 @@ private int[] values;
 		}	
 		return false;
 	}
-	}
+	
 	
 	//8. Complete the getKeysMethod so it returns the keys as an array
 	public String[] getKeys() {
