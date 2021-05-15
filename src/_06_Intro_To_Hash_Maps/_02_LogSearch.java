@@ -1,5 +1,9 @@
 package _06_Intro_To_Hash_Maps;
 
+import java.util.HashMap;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
 
 public class _02_LogSearch {
   /* 
@@ -29,5 +33,10 @@ public class _02_LogSearch {
 	 * 				is not in the list. 
 	 *
 	 * */
+	HashMap<Integer, String> values = new HashMap<Integer, String>();
+	JFrame frame = new JFrame();
+	JButton buttonOne = new JButton(); 
+	JButton buttonTwo = new JButton();
+	JButton buttonThree = new JButton();
 	
 }
