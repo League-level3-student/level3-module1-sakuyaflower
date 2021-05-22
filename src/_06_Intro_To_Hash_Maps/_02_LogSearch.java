@@ -1,11 +1,15 @@
 package _06_Intro_To_Hash_Maps;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.HashMap;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
-public class _02_LogSearch {
+public class _02_LogSearch implements KeyListener {
   /* 
 	 * Crate a HashMap of Integers for the keys and Strings for the values.
 	 * Create a GUI with three buttons. 
@@ -35,8 +39,42 @@ public class _02_LogSearch {
 	 * */
 	HashMap<Integer, String> values = new HashMap<Integer, String>();
 	JFrame frame = new JFrame();
-	JButton buttonOne = new JButton(); 
-	JButton buttonTwo = new JButton();
-	JButton buttonThree = new JButton();
-	
+	JPanel panel = new JPanel();
+	JButton buttonOne = new JButton("Add Entry"); 
+	JButton buttonTwo = new JButton("Search By ID");
+	JButton buttonThree = new JButton("View List");
+	static _02_LogSearch game = new _02_LogSearch();
+	public static void main(String[] args) {
+		game.setup();
+	}
+	void setup() {
+		frame.add(panel);
+		panel.add(buttonOne);
+		panel.add(buttonTwo);
+		panel.add(buttonThree);
+		frame.setVisible(true);
+		buttonOne.addKeyListener(this);
+		frame.pack();
+	}
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		 JButton pressed = (JButton) e.getSource();
+		 if(pressed == buttonOne) {
+			 String idNumber = JOptionPane.showInputDialog(null, "Please enter your ID number.");
+			 int i = Integer.parseInt(idNumber);
+			 String name = JOptionPane.showInputDialog(null, "Please enter your name.");
+		 }
+	values.put(i, name);
+	}
+	@Override
+	public void keyReleased(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void keyTyped(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
 }
