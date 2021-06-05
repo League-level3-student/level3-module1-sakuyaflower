@@ -1,5 +1,7 @@
 package _06_Intro_To_Hash_Maps;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.HashMap;
@@ -9,7 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class _02_LogSearch implements KeyListener {
+public class _02_LogSearch implements KeyListener, ActionListener {
   /* 
 	 * Crate a HashMap of Integers for the keys and Strings for the values.
 	 * Create a GUI with three buttons. 
@@ -54,18 +56,14 @@ public class _02_LogSearch implements KeyListener {
 		panel.add(buttonThree);
 		frame.setVisible(true);
 		buttonOne.addKeyListener(this);
+		buttonOne.addActionListener(this);
 		frame.pack();
 	}
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-		 JButton pressed = (JButton) e.getSource();
-		 if(pressed == buttonOne) {
-			 String idNumber = JOptionPane.showInputDialog(null, "Please enter your ID number.");
-			 int i = Integer.parseInt(idNumber);
-			 String name = JOptionPane.showInputDialog(null, "Please enter your name.");
-		 }
-	values.put(i, name);
+		 
+	
 	}
 	@Override
 	public void keyReleased(KeyEvent arg0) {
@@ -76,5 +74,28 @@ public class _02_LogSearch implements KeyListener {
 	public void keyTyped(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 		
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		JButton pressed = (JButton) e.getSource();
+		if(pressed == buttonOne) {
+			 String idNumber = JOptionPane.showInputDialog(null, "Please enter your ID number.");
+			 int i = Integer.parseInt(idNumber);
+			 String name = JOptionPane.showInputDialog(null, "Please enter your name.");
+		values.put(i, name)	 ;
+	}
+if(pressed == buttonTwo) {
+	String enterName = JOptionPane.showInputDialog(null, "Please enter your name here.");
+	if(values.containsKey(enterName) == true) {
+		System.out.println(enterName);
+	}
+	else {
+		JOptionPane.showMessageDialog(null, "Sorry your name does not exist.");
+	}
+}
+if(pressed == buttonThree) {
+	System.out.println(values);
+}
 	}
 }
